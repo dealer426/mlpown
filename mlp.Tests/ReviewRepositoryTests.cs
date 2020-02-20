@@ -34,7 +34,7 @@ namespace mlp.Tests
         {
             var count = underTest.Count();
 
-            Assert.Equal(0, count);
+            Assert.Equal(4, count);
         }
 
         [Fact]
@@ -45,10 +45,11 @@ namespace mlp.Tests
                 Content = "I love this pony",
                 ReviewerName = "Carl",
                 Rating = 5.0,
+                ProductId = 1,
             });
 
             var count = underTest.Count();
-            Assert.Equal(1, count);
+            Assert.Equal(5, count);
         }
 
         [Fact]
@@ -59,6 +60,7 @@ namespace mlp.Tests
                 Content = "I love this pony",
                 ReviewerName = "Carl",
                 Rating = 5.0,
+                ProductId = 1,
             };
             underTest.Create(expectedReview);
 
@@ -75,13 +77,14 @@ namespace mlp.Tests
                 Content = "I love this pony",
                 ReviewerName = "Carl",
                 Rating = 5.0,
+                ProductId = 1,
             };
             underTest.Create(review);
 
             underTest.Delete(review);
             var count = underTest.Count();
 
-            Assert.Equal(0, count);
+            Assert.Equal(4, count);
         }
 
         [Fact]
@@ -92,6 +95,7 @@ namespace mlp.Tests
                 Content = "I love this pony",
                 ReviewerName = "Carl",
                 Rating = 5.0,
+                ProductId = 1,
             });
 
             underTest.Create(new Review()
@@ -99,11 +103,12 @@ namespace mlp.Tests
                 Content = "This pony can Fly",
                 ReviewerName = "Amelia",
                 Rating = 4.6,
+                ProductId = 1,
             });
 
             var all = underTest.GetAll();
 
-            Assert.Equal(2, all.Count());
+            Assert.Equal(6, all.Count());
         }
 
         // Save or Update?

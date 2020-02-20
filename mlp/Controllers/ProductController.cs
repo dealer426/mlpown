@@ -20,7 +20,6 @@ namespace mlp.Controllers
             this.productRepo = productRepo;
         }
 
-
         // GET: /<controller>/
         public ViewResult Index()
         {

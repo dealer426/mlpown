@@ -1,61 +1,63 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xunit;
-using Microsoft.AspNetCore.Mvc;
-using mlp.Controllers;
-using mlp.Models;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Text;
+//using Xunit;
+//using Microsoft.AspNetCore.Mvc;
+//using mlp.Controllers;
+//using mlp.Models;
+//using mlp.Repositories;
 
-namespace mlp.Tests
-{
-    public class ProductControllerTests
-    {
-        ProductController controller;
-        public ProductControllerTests()
-        {
-            controller = new ProductController();
-        }
+//namespace mlp.Tests
+//{
+//    public class ProductControllerTests
+//    {
+//        ProductController productRepo;
 
-        [Fact]
-        public void Index_Returns_View()
-        {
-            //act
-            var result = controller.Index();
+//        public ProductControllerTests(IRepository<Product> productRepo)
+//        {
+//            this.productRepo = productRepo;
+//        }
 
-            //assert
-            Assert.IsType<ViewResult>(result);
-        }
+//        [Fact]
+//        public void Index_Returns_View()
+//        {
+//            //act
+//            var result = controller.Index();
 
-        [Fact]
-        public void Index_Passes_All_ProductModels_To_View()
-        {
-            //act
-            var result = controller.Index();
+//            //assert
+//            Assert.IsType<ViewResult>(result);
+//        }
 
-            //assert
-            Assert.IsAssignableFrom<IEnumerable<Product>>(result.Model);
-        }
+//        [Fact]
+//        public void Index_Passes_All_ProductModels_To_View()
+//        {
+//            //act
+//            var result = controller.Index();
 
-        [Fact]
-        public void Detail_Returns_View()
-        {
-            //act
-            var result = controller.Detail(1);
+//            //assert
+//            Assert.IsAssignableFrom<IEnumerable<Product>>(result.Model);
+//        }
 
-            //assert
-            Assert.IsType<ViewResult>(result);
+//        [Fact]
+//        public void Detail_Returns_View()
+//        {
+//            //act
+//            var result = controller.Detail(1);
 
-        }
+//            //assert
+//            Assert.IsType<ViewResult>(result);
 
-        [Fact]
-        public void Details_Passes_ProductModel_To_View()
-        {
-            //act
-            var result = controller.Detail(1);
+//        }
 
-            //assert
-            Assert.IsType<Product>(result.Model);
-        }
+//        [Fact]
+//        public void Details_Passes_ProductModel_To_View()
+//        {
+//            //act
+//            var result = controller.Detail(1);
 
-    }
-}
+//            //assert
+//            Assert.IsType<Product>(result.Model);
+//        }
+
+//    }
+//}
